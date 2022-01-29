@@ -1,0 +1,23 @@
+The equations are: ---
+25x + 5y + z = 106.8
+64x + 8y + z = 177.2
+144x + 12y + z = 279.2
+
+The Coefficient Matrix :---
+25     5     1     
+64     8     1     
+144     12     1     
+
+Upper Triangular Matrix : 
+25     5     1     
+0     -4.8     -1.56     
+0     0     0.7     
+
+Lower Triangular Matrix : 
+1     0     0     
+2.56     1     0     
+5.76     3.5     1     
+
+x = 0.290476
+y = 19.6905
+z = 1.08571

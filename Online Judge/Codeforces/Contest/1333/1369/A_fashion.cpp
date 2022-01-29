@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main(){
+    int t;
+    cin>>t;
+    int n;
+
+    while(t--){
+        cin>>n;
+
+        if(n%4==0){
+            printf("YES\n");
+        }
+        else{
+            printf("NO\n");
+        }
+    }
+    return 0;
+}

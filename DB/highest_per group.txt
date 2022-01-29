@@ -1,0 +1,54 @@
+Sample Input: 
+--------------------------------------------------
+DROP TABLE IF EXISTS Goals;
+CREATE TABLE Goals (
+    player TEXT,
+    team TEXT,
+    goals_scored BIGINT,
+    played BIGINT
+);
+INSERT INTO Goals VALUES
+    ("Iago Aspas", "Celta Vigo", 14, 33),
+    ("Antoine Griezmann", "Barcelona", 13, 36),
+    ("Luis Suarez", "Atletico Madrid", 21, 32),
+    ("Gerard Moreno", "Villarreal", 23, 33),
+    ("Karim Benzema", "Real Madrid", 23, 34),
+    ("Lionel Messi", "Barcelona", 30, 35),
+    ("Youssef En-Nesyri", "Sevilla", 18, 38),
+    ("Alexander Isak", "Real Sociedad", 17, 34);
+
+
+Sample Output:
+--------------------------------------------------
+DROP TABLE IF EXISTS Goals;
+CREATE TABLE Goals (
+    player TEXT,
+    team TEXT,
+    goals_scored BIGINT,
+    played BIGINT
+);
+INSERT INTO Goals VALUES
+    ("Luis Suarez", "Atletico Madrid", 21, 32),
+    ("Lionel Messi", "Barcelona", 30, 35),
+    ("Iago Aspas", "Celta Vigo", 14, 33),
+    ("Karim Benzema", "Real Madrid", 23, 34),
+    ("Alexander Isak", "Real Sociedad", 17, 34),
+    ("Youssef En-Nesyri", "Sevilla", 18, 38),
+    ("Gerard Moreno", "Villarreal", 23, 33);
+
+
+
+
+
+
+SQL:
+------------------------------------------------------
+Select * from 
+(select player, team, goals_scored, played
+from Goals as g 
+inner join
+(select team as t, max(goals_scored) as sc from Goals
+group by team) as high_score
+on high_score.sc = g.goals_scored and high_score.t = g.team) 
+as me
+order by team, player; 

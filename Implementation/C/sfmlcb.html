@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>How to Install SFML in Code::Blocks for Windows</title>
+<meta name="author" content="Edward Lee Parrish">
+<meta name="keywords" content="C++, CodeBlocks, Graphics, SFML">
+<meta name="Description" content="Describes how to set up the SFML graphics library to run with Code::Blocks.">
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<style type="text/css">
+body {
+    margin: 6px 24px 40px 30px;
+}
+</style>
+<script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/8B4BFB86-D80A-BF46-AB5B-8520AE0BD043/main.js" charset="UTF-8"></script></head>
+
+<body>
+<p><a href="javascript:history.back();">&lt;&lt; Back</a></p>
+<h1>How to Install SFML in Code::Blocks for Windows</h1>
+
+<h2>On This Page</h2>
+<ol type="A">
+<li><a href="#overview">Introduction</a></li>
+<li><a href="#sfmlinstall">Installing SFML</a></li>
+<li><a href="#testsfml">Creating an SFML Project</a></li>
+<li><a href="#exit_restart">Exiting and Restarting Projects</a></li>
+<li><a href="#moreinfo">More Information</a></li>
+<li><a href="#troubleshoot">In Case of Trouble</a></li>
+</ol>
+<hr>
+
+<h2 id="overview">A. Introduction</h2>
+<p>This document describes how to install SFML in Code::Blocks on a computer for the course CS-11: <em>Introduction to Programming Concepts and Methodology, C++</em>. <a href="http://sfml-dev.org" class="offsite" target="_blank">SFML</a> is a free and open source library that provides a simple object-oriented interface to graphics, sound and other parts of a personal computer. It has five main modules: system, window, graphics, audio and network. Since this is an introductory course, not all options are covered such as static builds.</p>
+<p>These instructions assume that you have already installed Code::Blocks as described in the document: <a href="codeblocks.html">How to Install Code::Blocks on Windows</a>. If not, do so now.</p>
+<p>For Linux computers, SFML installation is described in <a href="sfmlcb-linux.html">How to Install Code::Blocks and SFML for Linux</a>. For Macintosh computers, SFML installation is described in <a href="sfml-osx.html">How to Install SFML in OS-X</a>.</p>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+<h2 id="sfmlinstall">B. Installing SFML</h2>
+<p>Follow these instructions carefully. Do <strong>NOT</strong> just continue without completely reading each step of the instructions carefully or you will probably not install the software correctly. If in doubt ask a classmate or the instructor to verify what you are doing.</p>
+<p>If you cannot create an SFML project after installing, then you will need to reinstall Code::Blocks, SFML or both.</p>
+<ol>
+<li>In your CodeBlocks folder, create a new folder named "sfml" (without the quote marks). You will install the SFML files into this folder.
+<p><img src="images/sfml_dir.jpg" alt="Folder sfml"></p>
+</li>
+
+<li>Go to the <a href="http://sfml-dev.org/download.php" class="offsite" target="_blank">SFML download page</a> and follow the link to the <strong>latest stable version</strong>.</li>
+
+<li>Download the binaries corresponding to your compiler (<strong>GCC</strong>), <strong>32-bit</strong> words and variant (SJLJ vs DW2) with <strong>SJLJ</strong> preferred, like: <em>GCC 4.8 TDM (SJLJ) - 32 bits</em>.
+<p>If unsure, check which of the files <code>libgcc_s_sjlj-1.dll</code> or <code>libgcc_s_dw2-1.dll</code> you have in your <code>MinGW/bin</code> folder. If you have both, <strong>choose the SJLJ variant</strong> of SFML. The binary for the classroom computers is: <code>GCC 4.7 TDM (SJLJ) - 32 bits</code>. Here is the usual file to select:</p>
+<p><img src="images/sfml-lib.png" alt="Usual SFML file: GCC 4.7 TDM (SJLJ) - 32 bits." title="Usual SFML file to select."></p>
+</li>
+
+<li>Extract the downloaded file and move all the extracted SFML files and folders to the CodeBlocks folder named "sfml".
+<p>Make sure you have the correct folder structure. Do NOT have any extra file folders like "SFML 2.3" in the file path.</p>
+<p><img src="images/sfml_files.jpg" alt="Folders and files of SFML"></p>
+</li>
+
+<li>Start CodeBlocks and click on the Settings->Compiler menu to open the <strong>Compiler settings</strong> dialog.</li>
+
+<li>In the <strong>Compiler settings</strong> dialog:
+  <ol type="a">
+  <li>In the left-hand menu, verify <strong>Global compiler settings</strong> is selected,</li>
+  <li>Select the <strong>Toolchain executables</strong> tab.</li>
+  <li>Select the <strong>Additional Paths</strong> tab.</li>
+  <li>Press the <strong>Add</strong> button, find the <code>bin</code> folder of SFML (<code>C:\CodeBlocks\sfml\bin</code>), and add it without keeping relative paths.</li>
+  <li>Press the <strong>OK</strong> button at the bottom of the dialog.</li>
+  </ol>
+<p><img src="images/sfml-toolchain.jpg" alt="Adding Toolchain executable path"></p>
+<p>If you are reinstalling Code::Blocks, you may get a message, "Path already in the extra paths list!" If so, click OK and continue.</p>
+</li>
+</ol>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+
+<h2 id="testsfml">C. Creating an SFML Project</h2>
+<p>In this section we create a test project to verify the SFML installation. We can use these instructions as a starting point for other new projects as well.</p>
+<ol>
+<li>Run Code::Blocks and click the "Create a new project" link or follow the menus: <code>File -&gt; New -&gt; Project...</code>.
+<p><img src="images/cb_open.jpg" alt="Starting a Code::Blocks project."></p>
+</li>
+
+<li>Select the "Empty project" wizard by double-clicking the <strong>Empty project</strong> icon shown.
+<p><img src="images/cb_newproj.jpg" alt="Starting a Code::Blocks project."></p>
+</li>
+
+<li>In the "Empty project" start screen press the <strong>Next</strong> button.
+<p><img src="images/cb_emptyproj.jpg" alt="Empty project wizard starts"></p></li>
+
+<li>In the following window, enter a project title and folder path and then press the <strong>Next</strong> button. The example project is "test-sfml".
+<p><img src="images/sfml-testproj.jpg" alt="Example project test-sfml"></p></li>
+
+<li>Continuing through the "Empty project" wizard, verify the GNU GCC compiler is selected and then press the <strong>Finish</strong> button.
+<p><img src="images/cb_projcompiler.jpg" alt="Verify compiler"></p></li>
+
+<li>In the <strong>Project</strong> menu, select <strong>Build options...</strong>. (If "Build options" is grayed out, check to see if another Code::Blocks window is hidden behind the main window.) After selecting <strong>Build options...</strong> then:
+  <ol type="a">
+  <li>Click the global project configuration (project name) on the left-hand menu. The project title is what you entered in step 4.</li>
+  <li>Select the <strong>Search directories</strong> tab.</li>
+  <li>Select the <strong>Compiler</strong> subtab.</li>
+  <li>Press the <strong>Add</strong> button, find the <code>include</code> folder of SFML, and add it <strong>without keeping relative paths</strong>. If you installed SFML to the correct folder, then you can use (<code>C:\CodeBlocks\sfml\include</code>) independant of the title of your project.</li>
+  </ol>
+<p><img src="images/sfml-compdir.jpg" alt="Verify compiler"></p></li>
+
+<li>Similarly, set the <strong>Linker</strong> path to the <code>lib</code> folder (<code>C:\CodeBlocks\sfml\lib</code>) by:
+  <ol type="a">
+  <li>Clicking the global project configuration (project name) on the left-hand menu.</li>
+  <li>Selecting the <strong>Search directories</strong> tab.</li>
+  <li>Selecting the <strong>Linker</strong> subtab.</li>
+  <li>Pressing the <strong>Add</strong> button, finding the <code>lib</code> folder of SFML (<code>C:\CodeBlocks\sfml\lib</code>), and adding it without keeping relative paths.</li>
+  </ol>
+
+<p><img src="images/sfml-linkdir.jpg" alt="Verify compiler"></p></li>
+
+<li>Also in the <strong>Project build options</strong> dialog:
+  <ol type="a">
+  <li>Click the global project configuration (project name) on the left-hand menu,</li>
+  <li>Select the <strong>Linker settings</strong> tab,</li>
+  <li>Press the <strong>Add</strong> button and add the <strong>Link libraries</strong> in the order shown by typing the following names into the <strong>Add library</strong> dialog box:
+ <table cellpadding="12">
+ <tr><td valign="top">
+ <ul>
+    <li>sfml-graphics</li>
+    <li>sfml-window</li>
+    <li>sfml-system</li>
+    </ul>
+  </td>
+  <td valign="top"><img src="images/sfml-addlib.jpg" alt="Typing in libraries">
+ </td>
+ <td valign="top">Do NOT find a file. Instead, type (or copy) in the names shown to the left one at a time and press the OK button in the "Add library" dialog between each added name.</td></tr>
+  </table>
+</li>
+</ol>
+<p>The GCC compiler requires the link libraries to be in the correct order as shown. If you add <code>sfml-audio</code> or <code>sfml-network</code>, add them before <code>sfml-window</code>.</p>
+<p><img src="images/sfml-linkset.jpg" alt="Verify compiler"></p>
+</li>
+
+<li>When finished adding the project build options, press the OK button of the "Project build options" dialog shown above.</li>
+
+<li>Add a file to the project by using the menus <code>File->New->Empty file</code> and choosing an appropriate file name (<code>test.cpp</code>).
+<p>Read the dialogs and select appropriately. If in doubt, use my suggestions like <code>test.cpp</code>.</p></li>
+
+<li>In the file tab (<code>test.cpp</code>), copy and paste the following program code.
+<pre class="highlight" style="white-space:pre-wrap">
+#include &lt;SFML/Graphics.hpp&gt;
+
+int main()
+{
+    sf::RenderWindow win(sf::VideoMode(200, 200), "SFML Test");
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
+
+    while (win.isOpen())
+    {
+        sf::Event event;
+        while (win.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                win.close();
+            }
+        }
+
+        win.clear();
+        win.draw(shape);
+        win.display();
+    }
+
+    return 0;
+}
+</pre>
+</li>
+
+<li>Build the project by clicking on the <strong>Build</strong> icon <img src="images/cb_build_icon.png" alt="Code::Blocks build icon"> in the toolbar, using the menus <code>Build->Build</code>, or pressing Ctrl+F9.
+<p><img src="images/cb_build.png" alt="Code::Blocks Build icon"></p>
+</li>
+
+<li>When you build, you will see a pane at the bottom of Code::Blocks called <strong>Build Log</strong>. You should see an output like this showing the compiler did not report any errors:
+<p><img src="images/cb_build_log.png" alt="Code::Blocks Build Log"></p>
+<p>If you have problems, check the <a href="#troubleshoot">In Case of Trouble</a> section below.</p>
+</li>
+
+<li>Run the program by clicking on the <strong>Run</strong> icon <img src="images/cb_run_icon.png" alt="Code::Blocks run icon"> in the toolbar, using the menus <code>Build->Run</code>, or pressing Ctrl+F10, and verify you see the following graphics window.
+<p>If you have problems, check the <a href="#troubleshoot">In Case of Trouble</a> section below.</p>
+<p><img src="images/sfml-test.jpg" alt="Verify test graphics"></p>
+</li>
+
+<li>After closing the graphics window by pressing the red X, verify the message <strong>process returned 0</strong> appears in the console.
+<p><img src="images/sfml-end.jpg" alt="Verify correct ending"></p>
+</li>
+<li>Click on the console and press the space key to close the console window.</li>
+</ol>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+
+<h2 id="exit_restart">D. Exiting and Restarting Projects</h2>
+<ul>
+<li>To close a project, use <code>File->Close project</code> before exiting CodeBlocks.</li>
+<li>To restart a project, select (click on) the <code>.cpb</code> file for the project.</li>
+<li>To ease setting up a new project, you can start with the <a href="supplements/start-sfml.zip">start-sfml</a> project</li>
+<li>Make sure you unzip (extract) the project and then run it by double-clicking the file: <code>start-sfml.cbp</code></li>
+<li>The CBP (Code::Blocks Project) contains the information to start an exisiting project in Code::Blocks</li>
+</ul>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+
+<h2 id="moreinfo">E. More Information</h2>
+<ul>
+<li><a href="http://www.sfml-dev.org/" class="offsite" target="_blank">Simple and Fast Multimedia Library</a>: SFML Home Page</li>
+<li><a href="http://www.sfml-dev.org/tutorials/2.3/start-cb.php" class="offsite" target="_blank">SFML and Code::Blocks (MinGW)</a>: SFML setup for use with Code::Blocks</li>
+<li><a href="http://www.sfml-dev.org/tutorials/2.3/" class="offsite" target="_blank">Tutorials for SFML 2.3</a>: More information on how to use SFML.</li>
+</ul>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+
+<h2><a name="troubleshoot"></a>F. In Case of Trouble</h2>
+<ol>
+<li>If you see an error message like:
+<pre class="highlight" style="white-space:pre-wrap">
+unknown type name 'namespace'
+</pre>
+<p>verify that the file extension is <code>.cpp</code> and is not a <code>.c</code> file extension.</p>
+</li>
+
+<li>If you see an error message like:
+<pre class="highlight" style="white-space:pre-wrap">
+The procedure entry point ___ could not be located in the dynamic link library
+</pre>
+<p>make sure you have the correct SFML binary. (See <a href="#sfmlinstall">Installing SFML</a> step 3)</p>
+</li>
+
+<li>An error message like:
+<pre class="highlight" style="white-space:pre-wrap">
+<span style="background-color:red;color:white;">Process terminated with status -1073741510</span>
+</pre>
+<p>means you closed the console window before closing the SFML graphics window. To prevent the message, close the SFML graphics window before closing the console (terminal) window.</p>
+</li>
+
+<li>An error message like:
+<pre class="highlight" style="white-space:pre-wrap">
+Failed to share the OpenGL context
+</pre>
+<p>means that SFML could not correctly set up OpenGL because the window is larger than the screen or other reasons such as using remote desktop.</p>
+</li>
+
+<li>An error message like:
+<pre class="highlight" style="white-space:pre-wrap">
+fatal error: SFML/Graphics.hpp: No such file or directory
+</pre>
+<p>means that SFML could not locate the <code>SFML/Graphics.hpp</code> file because it is installed in the wrong folder. See <a href="#sfmlinstall">Installing SFML</a> steps 1 and 4.</p>
+</li>
+
+<li>If the "Build" option is grayed out, close any SFML and Terminal windows started by Code::Blocks.</li>
+</ol>
+
+<p>For any other error, try reinstalling Code::Blocks, SFML or both, following the instructions carefully.</p>
+<p class="navtop"><a href="#top">^ top</a></p>
+
+
+<p><a href="javascript:history.back();">&lt;&lt; Back</a></p>
+</body>
+</html>

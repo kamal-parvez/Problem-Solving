@@ -1,0 +1,19 @@
+The equations are: ---
+x + y + z = 6
+2y + 5z = -4
+2x + 5y -z = 27
+
+The Coefficient Matrix :---
+1   1   1   
+0   2   5   
+2   5   -1   
+
+Inverse Matrix : 
+1.28571   -0.285714   -0.142857   
+-0.47619   0.142857   0.238095   
+0.190476   0.142857   -0.0952381   
+
+The Solutions are : ---
+x = 5
+y = 3
+z = -2
