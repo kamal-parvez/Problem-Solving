@@ -1,5 +1,7 @@
 import Hard.LargestRectangle;
 import Implementation.Trie;
+import Medium.MaximalSquare;
+import Medium.RotateArray;
 
 import java.util.Scanner;
 import java.util.Stack;
@@ -24,10 +26,15 @@ public class Main {
 //            }
 //
 //        }
-        int heights[] = {2,1,5,6,2,3};
-        LargestRectangle largestRectangle = new LargestRectangle();
-        System.out.println("Max Area : " + largestRectangle.largestRectangleArea(heights));
-
+        char[][] matrix =
+                {{'0', '1', '1', '0', '1'},
+                {'1', '1', '0', '1', '0'},
+                {'0', '1', '1', '1', '0'},
+                {'1', '1', '1', '1', '0'},
+                {'1', '1', '1', '1', '1'},
+                {'0', '0', '0', '0', '0'}};
+        MaximalSquare obj = new MaximalSquare();
+        System.out.println("Max Area : " + obj.maximalSquare(matrix));
 
     }
 }
