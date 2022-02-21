@@ -1,7 +1,11 @@
 
+import Easy.AddDigits;
 import Hard.MergeKSortedList;
+import Implementation.Pyramid;
+import Medium.DiffPair;
 import Medium.FourSumTwo;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -26,10 +30,11 @@ public class Main {
 //
 //        }
 
-        new MergeKSortedList().makeList();
-
-        System.out.println("Zeors : " );
+        int[] nums = {6,7,3,6,4,6,3,5,6,9};
+        int k = 4;
+        System.out.println(k+"-diff pair: " + new DiffPair().findPairs(nums, k));
 
     }
 }
+
 
