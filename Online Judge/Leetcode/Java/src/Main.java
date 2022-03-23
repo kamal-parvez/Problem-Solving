@@ -1,13 +1,6 @@
 
-import Easy.AddDigits;
-import Hard.MergeKSortedList;
-import Implementation.Pyramid;
-import Medium.DiffPair;
-import Medium.FourSumTwo;
-
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Stack;
+import Medium.BrokenCalculator;
+import Medium.ScoreOfParentheses;
 
 public class Main {
 
@@ -30,10 +23,10 @@ public class Main {
 //
 //        }
 
-        int[] nums = {6,7,3,6,4,6,3,5,6,9};
-        int k = 4;
-        System.out.println(k+"-diff pair: " + new DiffPair().findPairs(nums, k));
-
+        int ara[] =  {1}; //{96,44,99,25,61,84,88,18,19,33,60,86,52,19,32,47,35,50,94,17,29,98,22,21,72,100,40,84};
+        int k = 35;
+        System.out.println(new BrokenCalculator().brokenCalc(2, 3));
+        System.out.println();
     }
 }
 
