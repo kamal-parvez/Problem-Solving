@@ -1,5 +1,6 @@
 
 import Easy.PascalTriangle;
+import Easy.PowerOfTwo;
 import Medium.BrokenCalculator;
 import Medium.IncreasingTripletSubsequence;
 import Medium.ScoreOfParentheses;
@@ -27,7 +28,8 @@ public class Main {
 
         int ara[] =  {1}; //{96,44,99,25,61,84,88,18,19,33,60,86,52,19,32,47,35,50,94,17,29,98,22,21,72,100,40,84};
         int k = 35;
-        System.out.println(new PascalTriangle().generate(5));
+        System.out.println(new PowerOfTwo().isPowerOfTwo(-16));
+        System.out.println(Math.log(16));
     }
 }
 
