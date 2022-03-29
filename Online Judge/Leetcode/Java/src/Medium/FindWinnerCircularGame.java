@@ -2,46 +2,55 @@ package Medium;
 
 //leetcode - 1823. Find the Winner of the Circular Game
 
+import java.util.Arrays;
+
 public class FindWinnerCircularGame {
 
-    int[] ara;
     
     public int findTheWinner(int n, int k) {
-        ara = new int[n];
-        for(int i=0; i<n; i++){
-            ara[i] = i+1;
+        Node one = new Node(1);
+        Node prev = one;
+
+        for(int i=2; i<=n; i++){
+            Node node = new Node(i);
+            prev.right = node;
+            prev = node;
         }
-        
+        prev.right = one;
+
         int person = n;
-        int index = 0;
-        int eliminate = -1;
+        int count;
+        Node cur = one;
         
         while (person != 1){
-            int temp = 0;
-            
-            while (temp != k){
-                if(ara[index] != eliminate){
-                    temp++;
-                    index = (index + 1) % n;
-                }
+            count = 0;
+
+            while (count != k-1){
+                cur = cur.right;
             }
-            
-            while (ara[index] == eliminate){
-                index++;
-            }
-            
-            ara[index] = eliminate;
-            person--;
+            //done
+
         }
+
         int res = 0;
         
-        for(int i=0; i<n; i++){
-            if(ara[i] != eliminate){
-                res = ara[i];
-            }
-        }
-        
         return res;
+    }
+
+    public class Node{
+        int val;
+        Node right;
+
+        Node(){}
+
+        Node(int val){
+            this.val = val;
+        }
+
+        Node(int val, Node right){
+            this.val = val;
+            this.right = right;
+        }
     }
     
 }
