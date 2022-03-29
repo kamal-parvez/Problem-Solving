@@ -14,32 +14,43 @@ public class FindWinnerCircularGame {
         for(int i=2; i<=n; i++){
             Node node = new Node(i);
             prev.right = node;
+            node.left = prev;
             prev = node;
         }
         prev.right = one;
+        one.left = prev;
 
         int person = n;
         int count;
         Node cur = one;
+
+//        do{
+//            System.out.println(cur.val);
+//            cur = cur.left;
+//        }while (cur != one);
         
         while (person != 1){
-            count = 0;
+            count = 1;
 
-            while (count != k-1){
+            while (count != k){
                 cur = cur.right;
+                count++;
             }
-            //done
+            Node temp = cur.right;
+            cur.left.right = cur.right;
+            cur.right.left = cur.left;
 
+            cur = temp;
+            person--;
         }
-
-        int res = 0;
         
-        return res;
+        return cur.val;
     }
 
     public class Node{
         int val;
         Node right;
+        Node left;
 
         Node(){}
 
@@ -47,9 +58,10 @@ public class FindWinnerCircularGame {
             this.val = val;
         }
 
-        Node(int val, Node right){
+        Node(int val, Node right, Node left){
             this.val = val;
             this.right = right;
+            this.left = left;
         }
     }
     
