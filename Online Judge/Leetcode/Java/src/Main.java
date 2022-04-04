@@ -32,7 +32,8 @@ public class Main {
 //        }
 
         int ara[] =  {31,119983340,494857782,48,904409366,65626832,610586467}; //{96,44,99,25,61,84,88,18,19,33,60,86,52,19,32,47,35,50,94,17,29,98,22,21,72,100,40,84};
-        System.out.println(new FindKthBitInNthBinaryString().findKthBit(4, 11));
+        int[][] pair = {{1,2},{2,3},{3,4}};
+        System.out.println(new MaximumLengthOfPairChain().findLongestChain(pair));
         String str = "0011";
 
 
