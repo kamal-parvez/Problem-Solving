@@ -1,6 +1,7 @@
 
 import Easy.PascalTriangle;
 import Easy.PowerOfTwo;
+import Hard.EditDistance;
 import Medium.*;
 import contest.WeeklyContest286.Beautiful;
 import contest.WeeklyContest286.NewClass;
@@ -31,6 +32,8 @@ public class Main {
 //            }
 //
 //        }
+
+        System.out.println(new EditDistance().minDistance("horse", "ros"));
     }
 }
 
