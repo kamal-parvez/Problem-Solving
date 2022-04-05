@@ -10,6 +10,9 @@ public class DecodeString {
     public String decodeString(String s) {
         str = s;
         l = s.length();
+
+        //code
+        return "";
     }
 
     public void recFun(int i){

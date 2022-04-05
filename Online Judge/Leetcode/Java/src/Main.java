@@ -2,6 +2,7 @@
 import Easy.PascalTriangle;
 import Easy.PowerOfTwo;
 import Hard.EditDistance;
+import Implementation.DP.CoinChangeOne;
 import Medium.*;
 import contest.WeeklyContest286.Beautiful;
 import contest.WeeklyContest286.NewClass;
@@ -33,7 +34,9 @@ public class Main {
 //
 //        }
 
-        System.out.println(new EditDistance().minDistance("horse", "ros"));
+        int[] ara = {2,5,9,13,15};
+
+        System.out.println(new CoinChangeOne().getMinCoin(ara, 22));
     }
 }
 
