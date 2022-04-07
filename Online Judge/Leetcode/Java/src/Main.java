@@ -3,6 +3,8 @@ import Easy.PascalTriangle;
 import Easy.PowerOfTwo;
 import Hard.EditDistance;
 import Implementation.DP.CoinChangeOne;
+import Implementation.DP.PossibleAmount;
+import Implementation.DP.SubsetSum;
 import Medium.*;
 import contest.WeeklyContest286.Beautiful;
 import contest.WeeklyContest286.NewClass;
@@ -34,9 +36,9 @@ public class Main {
 //
 //        }
 
-        int[] ara = {2,5,9,13,15};
+        int[] ara = {5,15,3,17,12};
 
-        System.out.println(new CoinChangeOne().getMinCoin(ara, 22));
+        System.out.println(new UniquePath().uniquePaths(3, 2));
     }
 }
 
