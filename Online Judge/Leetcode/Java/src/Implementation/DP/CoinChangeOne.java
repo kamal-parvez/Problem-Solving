@@ -2,6 +2,8 @@ package Implementation.DP;
 
 import java.util.Arrays;
 
+//use a coin from a list for just one time
+
 public class CoinChangeOne {
 
     int l;

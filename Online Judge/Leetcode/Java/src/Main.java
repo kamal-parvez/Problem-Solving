@@ -1,17 +1,6 @@
 
-import Easy.PascalTriangle;
-import Easy.PowerOfTwo;
-import Hard.EditDistance;
-import Implementation.DP.CoinChangeOne;
-import Medium.*;
-import contest.WeeklyContest286.Beautiful;
-import contest.WeeklyContest286.NewClass;
-import contest.WeeklyContest286.Palindrome;
-import contest.biweeklyContest75.Contest;
+import Implementation.DP.CoinChangeThree;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Main {
 
@@ -36,7 +25,7 @@ public class Main {
 
         int[] ara = {2,5,9,13,15};
 
-        System.out.println(new CoinChangeOne().getMinCoin(ara, 22));
+        System.out.println(new CoinChangeThree().getCoin(ara, 30));
     }
 }
 

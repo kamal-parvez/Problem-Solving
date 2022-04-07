@@ -17,20 +17,24 @@ public class DecodeString {
 
     public void recFun(int i){
 
-        int j = i;
-        String temp = "";
-        while (str.charAt(j) != '['){
-            temp += str.charAt(j);
+        if(str.charAt(i) >= '0' && str.charAt(i) <= '9'){
+            int j = i;
+            String temp = "";
+            while (str.charAt(j) != '['){
+                temp += str.charAt(j);
+                j++;
+            }
+            int x = Integer.parseInt(temp);
+            temp = "";
             j++;
-        }
-        int x = Integer.parseInt(temp);
-        temp = "";
-        j++;
 
-        while (str.charAt(j) != ']'){
-            temp += str.charAt(j);
+            while (str.charAt(j) != ']'){
+                temp += str.charAt(j);
+            }
         }
+
 
     }
+
 
 }
