@@ -1,6 +1,4 @@
 
-import Implementation.DP.CoinChangeThree;
-
 
 public class Main {
 
@@ -23,9 +21,8 @@ public class Main {
 //
 //        }
 
-        int[] ara = {2,5,9,13,15};
+        //int[] ara = {5,15,3,17,12};
 
-        System.out.println(new CoinChangeThree().getCoin(ara, 30));
     }
 }
 
