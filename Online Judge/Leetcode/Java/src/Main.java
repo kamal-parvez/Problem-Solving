@@ -1,4 +1,4 @@
-
+import Implementation.DP.MatrixChainMultiplication;
 
 public class Main {
 
@@ -21,7 +21,8 @@ public class Main {
 //
 //        }
 
-        //int[] ara = {5,15,3,17,12};
+        int[] ara = {2};
+        new MatrixChainMultiplication().input();
 
     }
 }
