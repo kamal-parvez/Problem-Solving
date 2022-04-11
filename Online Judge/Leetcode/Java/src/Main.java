@@ -1,5 +1,6 @@
 import Hard.BurstBalloons;
 import Implementation.DP.MatrixChainMultiplication;
+import Medium.PartitionKEqualSumSubsets;
 
 public class Main {
 
@@ -22,8 +23,8 @@ public class Main {
 //
 //        }
 
-        int[] ara = {3,1,5,8};
-        System.out.println(new BurstBalloons().maxCoins(ara));;
+        int[] ara = {4,3,2,3,5,2,1};
+        System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 4));
 
     }
 }
