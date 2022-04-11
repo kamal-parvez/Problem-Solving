@@ -23,10 +23,15 @@ public class Main {
 //
 //        }
 
-        int[] ara = {4,3,2,3,5,2,1};
-        System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 4));
+        int[] ara = {4,4,4,6,1,2,2,9,4,6};
+        System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 3));
 
     }
 }
+
+
+
+//[4,4,4,6,1,2,2,9,4,6]
+ //       3
 
 
