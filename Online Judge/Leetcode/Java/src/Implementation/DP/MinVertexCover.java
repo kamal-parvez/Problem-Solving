@@ -39,7 +39,18 @@ public class MinVertexCover {
         }
         Arrays.fill(par, -1);
 
-        return Integer.min(fun(0, 0), fun(0, 1));
+        int res1 = fun(0, 0);
+        System.out.println("res1 : " + res1);
+        for(int i=0; i<n; i++){
+            System.out.println("in: " + i + "   " + Arrays.toString(dp[i]));
+        }
+        int res2 = fun(0, 1);
+        System.out.println("res1 : " + res1);
+        for(int i=0; i<n; i++){
+            System.out.println("in: " + i + "   " + Arrays.toString(dp[i]));
+        }
+
+        return Integer.min(res1, res2);
     }
 
     public int fun(int i, int isCover){

@@ -19,18 +19,25 @@ public class BinaryTreeCameras {
 
     public void input(){
         TreeNode root = new TreeNode(0);
-        TreeNode cur = root;
+//        TreeNode cur = root;
+//
+//        cur.left = new TreeNode(0);
+//        cur = cur.left;
+//        cur.right = new TreeNode(0);
+//        cur = cur.right;
+//        cur.left = new TreeNode(0);
+//        cur = cur.left;
+//        cur.right = new TreeNode(0);
+//        cur = cur.right;
+//        cur.left = new TreeNode(0);
+//        cur = cur.left;
 
-        cur.left = new TreeNode(0);
-        cur = cur.left;
-        cur.right = new TreeNode(0);
-        cur = cur.right;
-        cur.left = new TreeNode(0);
-        cur = cur.left;
-        cur.right = new TreeNode(0);
-        cur = cur.right;
-        cur.left = new TreeNode(0);
-        cur = cur.left;
+        root.left = new TreeNode(0);
+        root.left.left = new TreeNode(0);
+        root.left.left.left = new TreeNode(0);
+        root.left.left.left.left = new TreeNode(0);
+        root.left.left.left.left.left = new TreeNode(0);
+
         System.out.println(minCameraCover(root));
     }
 
@@ -59,7 +66,7 @@ public class BinaryTreeCameras {
             System.out.println("res1 : " + res1);
             for(int i=0; i<count; i++){
                 System.out.println("in: " + i + "   " + Arrays.toString(dp[i]));
-                Arrays.fill(dp[i], empty);
+                //Arrays.fill(dp[i], empty);
             }
             int res2 = fun(root, notInsCam);
             System.out.println("res2: " + res2);
@@ -76,8 +83,13 @@ public class BinaryTreeCameras {
 
         if(dp[map.get(cur)][isCam] == empty){
             int ans = isCam;
-            ans += Math.min(fun(cur.left, installCam), fun(cur.left, notInsCam));
-            ans += Math.min(fun(cur.right, installCam), fun(cur.right, notInsCam));
+            if(isCam == notInsCam){
+                ans += fun(cur.left, installCam);// + fun(cur.right, installCam);
+            }
+            else{
+                ans += Math.min(fun(cur.left, installCam), fun(cur.left, notInsCam));
+                //ans += Math.min(fun(cur.right, installCam), fun(cur.right, notInsCam));
+            }
 
             dp[map.get(cur)][isCam] = ans;
         }
