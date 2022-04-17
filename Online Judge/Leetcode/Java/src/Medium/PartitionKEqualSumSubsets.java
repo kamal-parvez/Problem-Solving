@@ -23,19 +23,22 @@ public class PartitionKEqualSumSubsets {
         }
 
         boolean flag = true;
+        System.out.println("sum : " + sum);
+        System.out.println(Arrays.toString(nums));
 
-        if(sum % 4 == 0){
-            dp = new int[n][sum/4 +1];
+        if(sum % k == 0){
+            dp = new int[n][sum/k +1];
 
-           while(k > 0){
+           for(int j=0; j<k; j++){
                for(int i=0; i<n; i++){
                    Arrays.fill(dp[i], empty);
                }
-               if(fun(0, sum/4) == 0){
+               if(fun(0, sum/k) == 0){
                    flag = false;
+                   System.out.println(Arrays.toString(nums));
                    break;
                }
-               k--;
+               System.out.println(Arrays.toString(nums));
            }
         }
         else{
@@ -52,10 +55,10 @@ public class PartitionKEqualSumSubsets {
 
         if(dp[i][amount] == empty){
             for(int j=i; j<n; j++){
-                if(nums[i] == inf) continue;
+                if(nums[j] == inf) continue;
 
-                if(fun(i+1, amount - nums[i]) == 1){
-                    nums[i] = inf;
+                if(fun(j+1, amount - nums[j]) == 1){
+                    nums[j] = inf;
                     dp[i][amount] = 1;
                 }
                 else{

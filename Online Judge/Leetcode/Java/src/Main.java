@@ -1,6 +1,12 @@
+
+import Hard.BinaryTreeCameras;
 import Hard.BurstBalloons;
 import Implementation.DP.MatrixChainMultiplication;
+import Implementation.DP.MinVertexCover;
 import Medium.PartitionKEqualSumSubsets;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
 
@@ -23,15 +29,20 @@ public class Main {
 //
 //        }
 
-        int[] ara = {4,4,4,6,1,2,2,9,4,6};
-        System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 3));
-
+        int[] ara = {0,0,1,1,0,0,1,1,0,0};
+        //System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 4));
+        BinaryTreeCameras bin = new BinaryTreeCameras();
+        bin.input();
     }
 }
 
 
+//[0,0,null,null,0,0,null,null,0,0]
 
 //[4,4,4,6,1,2,2,9,4,6]
  //       3
+
+//[1,1,1,1,2,2,2,2]
+ //       4
 
 
