@@ -15,6 +15,8 @@ public class BinaryTreeCameras {
     int notInsCam = 0;
     int empty = -1;
     int count = 0;
+    int[] color;
+    int[] par;
     HashMap<TreeNode, Integer> map = new HashMap<>();
 
     public void input(){
@@ -57,6 +59,13 @@ public class BinaryTreeCameras {
         }
         else{
             preorderTraversal(root);
+
+            color = new int[count];
+            Arrays.fill(color, notInsCam);
+
+            par = new int[count];
+            Arrays.fill(par, empty);
+
             dp = new int[count][2];
             for(int i=0; i<count; i++){
                 Arrays.fill(dp[i], empty);
@@ -81,14 +90,32 @@ public class BinaryTreeCameras {
 
         if(cur == null) return 0;
 
+
         if(dp[map.get(cur)][isCam] == empty){
+            color[map.get(cur)] = isCam;
+            if(cur.left != null) par[map.get(cur.left)] = map.get(cur);
+            if(cur.right != null) par[map.get(cur.right)] = map.get(cur);
+
             int ans = isCam;
-            if(isCam == notInsCam){
-                ans += fun(cur.left, installCam);// + fun(cur.right, installCam);
+            if(isCam == installCam){
+                ans += fun(cur.left, notInsCam)   + fun(cur.right, notInsCam);
+            }
+            else if(isCam == notInsCam && map.get(cur) != 0 && color[par[map.get(cur)]] == installCam){
+               ans += Math.min(fun(cur.left, installCam), fun(cur.left, notInsCam));
+               ans += Math.min(fun(cur.right, installCam), fun(cur.right, notInsCam));
             }
             else{
-                ans += Math.min(fun(cur.left, installCam), fun(cur.left, notInsCam));
-                //ans += Math.min(fun(cur.right, installCam), fun(cur.right, notInsCam));
+                int temp1 = fun(cur.left, installCam);
+                int temp2 = fun(cur.right, installCam);
+                if(temp1 == 0 && temp2 == 0) {
+                    ans += 0;
+                }
+                else if(temp2 ==0 || temp1 < temp2) {
+                    ans += temp1 + Math.min(fun(cur.right, installCam), fun(cur.right, notInsCam));
+                }
+                else if(temp1 ==0 || temp1 >= temp2){
+                    ans += temp2 + Math.min(fun(cur.left, installCam), fun(cur.left, notInsCam));
+                }
             }
 
             dp[map.get(cur)][isCam] = ans;

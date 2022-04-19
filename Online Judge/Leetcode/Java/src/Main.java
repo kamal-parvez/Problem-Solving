@@ -33,7 +33,7 @@ public class Main {
         //System.out.println(new PartitionKEqualSumSubsets().canPartitionKSubsets(ara, 4));
         BinaryTreeCameras bin = new BinaryTreeCameras();
         bin.input();
-        new MinVertexCover().input();
+        //new MinVertexCover().input();
     }
 }
 

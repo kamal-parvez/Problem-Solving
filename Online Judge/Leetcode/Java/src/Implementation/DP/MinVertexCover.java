@@ -56,7 +56,7 @@ public class MinVertexCover {
     public int fun(int i, int isCover){
 
         if(dp[i][isCover] == -1){
-            int ans = 0;
+            int ans = isCover;
             for(int u: path[i]){
                 if(par[i] == u) continue;
 
@@ -66,7 +66,7 @@ public class MinVertexCover {
                     ans += fun(u, 1);
                 }
                 else {
-                    ans += (1 + Math.min(fun(u, 0), fun(u, 1)));
+                    ans += (Math.min(fun(u, 0), fun(u, 1)));
                 }
             }
             dp[i][isCover] = ans;
