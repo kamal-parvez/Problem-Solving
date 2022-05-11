@@ -21,24 +21,24 @@ public class BinaryTreeCameras {
 
     public void input(){
         TreeNode root = new TreeNode(0);
-//        TreeNode cur = root;
-//
-//        cur.left = new TreeNode(0);
-//        cur = cur.left;
-//        cur.right = new TreeNode(0);
-//        cur = cur.right;
-//        cur.left = new TreeNode(0);
-//        cur = cur.left;
-//        cur.right = new TreeNode(0);
-//        cur = cur.right;
-//        cur.left = new TreeNode(0);
-//        cur = cur.left;
+        TreeNode cur = root;
 
-        root.left = new TreeNode(0);
-        root.left.left = new TreeNode(0);
-        root.left.left.left = new TreeNode(0);
-        root.left.left.left.left = new TreeNode(0);
-        root.left.left.left.left.left = new TreeNode(0);
+        cur.left = new TreeNode(0);
+        cur = cur.left;
+        cur.right = new TreeNode(0);
+        cur = cur.right;
+        cur.left = new TreeNode(0);
+        cur = cur.left;
+        cur.right = new TreeNode(0);
+        cur = cur.right;
+        cur.left = new TreeNode(0);
+        cur = cur.left;
+
+//        root.left = new TreeNode(0);
+//        root.left.left = new TreeNode(0);
+//        root.left.left.left = new TreeNode(0);
+//        root.left.left.left.left = new TreeNode(0);
+//        root.left.left.left.left.left = new TreeNode(0);
 
         System.out.println(minCameraCover(root));
     }
@@ -75,8 +75,9 @@ public class BinaryTreeCameras {
             System.out.println("res1 : " + res1);
             for(int i=0; i<count; i++){
                 System.out.println("in: " + i + "   " + Arrays.toString(dp[i]));
-                //Arrays.fill(dp[i], empty);
+                Arrays.fill(dp[i], empty);
             }
+          
             int res2 = fun(root, notInsCam);
             System.out.println("res2: " + res2);
             for(int i=0; i<count; i++){
